@@ -1,0 +1,22 @@
+{
+  "name": "ces-fullstack",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Full-stack Course End Survey Application",
+  "scripts": {
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "start": "npm run start:dev",
+    "start:frontend": "cd frontend && npm start",
+    "start:backend": "cd backend && npm start",
+    "start:dev": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "build:frontend": "cd frontend && npm run build",
+    "test:frontend": "cd frontend && npm test",
+    "dev:backend": "cd backend && npm run dev"
+  },
+  "keywords": ["fullstack", "react", "express", "survey"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
