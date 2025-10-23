@@ -1,0 +1,34 @@
+CREATE TABLE questions (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  question TEXT NOT NULL,
+  branch VARCHAR(50) NOT NULL,
+  semester INT NOT NULL,
+  sname VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE student_answers (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  studentId VARCHAR(50) NOT NULL,
+  branch VARCHAR(50) NOT NULL,
+  semester INT NOT NULL,
+  year INT NOT NULL,
+  value INT NOT NULL,
+  subjectName VARCHAR(50) NOT NULL,
+  question TEXT NOT NULL,
+  questionId INT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (questionId) REFERENCES questions(id)
+);
+
+CREATE TABLE users (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  rollno VARCHAR(50) UNIQUE NOT NULL,
+  name VARCHAR(100) NOT NULL,
+  branch VARCHAR(50) NOT NULL,
+  year INT NOT NULL,
+  sem INT NOT NULL,
+  accyear INT NOT NULL,
+  batchyear INT NOT NULL,
+  aadhar_no VARCHAR(12) UNIQUE NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
